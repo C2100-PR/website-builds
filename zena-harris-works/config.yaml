@@ -1,0 +1,107 @@
+# Zena Harris Works White Label Configuration
+
+site:
+  domain: zena.2100.cool
+  title: "Zena Harris Works"
+  template: white_label_v1
+  theme: zena_custom
+
+deployment:
+  project_id: api-for-warp-drive
+  region: us-west1-b
+  cloud_run:
+    service: zena-harris-works
+    domain_mapping: zena.2100.cool
+
+design:
+  colors:
+    primary: "#4A90E2"
+    secondary: "#50E3C2"
+    accent: "#F5A623"
+    text: "#4A4A4A"
+    background: "#FFFFFF"
+  
+  typography:
+    headings: "Playfair Display"
+    body: "Open Sans"
+    
+  layout:
+    max_width: "1200px"
+    grid: "12-column"
+
+content:
+  homepage:
+    hero:
+      title: "Zena Harris Works"
+      subtitle: "Transforming Ideas into Reality"
+      cta: "Learn More"
+      
+    sections:
+      - title: "Services"
+        layout: "3-column"
+        items:
+          - title: "Consulting"
+            description: "Strategic business consulting"
+            icon: "consulting"
+          - title: "Development"
+            description: "Custom software solutions"
+            icon: "development"
+          - title: "Training"
+            description: "Professional development"
+            icon: "training"
+            
+      - title: "About"
+        layout: "full-width"
+        content: "About Zena Harris Works..."
+        
+  navigation:
+    main:
+      - text: "Home"
+        url: "/"
+      - text: "Services"
+        url: "/services"
+      - text: "About"
+        url: "/about"
+      - text: "Contact"
+        url: "/contact"
+
+integrations:
+  analytics:
+    provider: google_analytics
+    id: "UA-XXXXXXXX-X"
+    
+  forms:
+    provider: formspree
+    endpoint: "xyz123"
+    
+  marketing:
+    provider: mailchimp
+    list_id: "abc123"
+
+security:
+  ssl: true
+  headers:
+    - Content-Security-Policy
+    - X-Frame-Options
+    - X-XSS-Protection
+
+performance:
+  caching:
+    enabled: true
+    duration: 3600
+    
+  optimization:
+    images: true
+    minification: true
+    compression: true
+
+monitoring:
+  uptime:
+    check_interval: 60
+    alert_threshold: 99.9
+    
+  performance:
+    metric_collection: true
+    alert_threshold:
+      response_time: 200
+      error_rate: 0.1
